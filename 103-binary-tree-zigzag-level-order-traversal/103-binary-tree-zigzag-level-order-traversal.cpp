@@ -21,7 +21,7 @@ if(root==NULL) return result;
        
         while(!q.empty()){
               int size=q.size();
-            vector<int>v(size);
+            vector<int>v(size);// kyuki hmne neche index me value dalni he toh hme size dena pdega edr ich hi
            
              for (int i = 0; i < size; i++) {
       TreeNode * node = q.front();
