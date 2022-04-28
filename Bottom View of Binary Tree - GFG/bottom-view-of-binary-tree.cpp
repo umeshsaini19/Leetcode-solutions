@@ -108,6 +108,7 @@ class Solution {
            Node*temp=it.first;
            int level=it.second;
           // mp.insert({level,temp->data});
+          // mp.insert({level,temp->data});
            mp[level]=temp->data;
            
            if(temp->left) q.push({temp->left,level-1});
