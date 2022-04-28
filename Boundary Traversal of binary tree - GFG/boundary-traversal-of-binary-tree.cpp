@@ -105,7 +105,7 @@ struct Node
 
 class Solution {
 public:
-bool isleaf(Node*curr){
+  bool isleaf(Node*curr){
    return (!curr->left &&!curr->right);
 }
 void left(Node*root,vector<int>&ans){
