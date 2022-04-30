@@ -11,6 +11,9 @@
  */
 class Solution {
 public:
+    
+    
+    //isse peche vala jo solution kiya he voh zero based indexing he dont know kyu ni chl rha and usko bhi dekhlena bhai voh khud likha he 
     int widthOfBinaryTree(TreeNode* root) {
     if(root == NULL) // if root is null 
             return 0;   // simply return zero
