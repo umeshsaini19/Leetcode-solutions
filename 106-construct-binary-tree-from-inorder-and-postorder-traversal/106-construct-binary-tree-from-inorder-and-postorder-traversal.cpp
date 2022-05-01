@@ -13,6 +13,9 @@ class Solution {
 public:
      int index;
     unordered_map<int,int>m;
+    
+    //code bhaisahb pechle vale jaise he pr bs mehnat krni he toh index last se shuru krne ki
+    //bcz post me root last pe hota and second thing isme right pehle call hogi left se kyuki root ke just v=before vale element inorder ke right me and agr right ke liye calll na hui toh voh left me print ho jayega baki sara ehn same 
     TreeNode* helper(vector<int>& in, vector<int>& post, int lb, int ub)
     {
         if(lb>ub) return NULL;
