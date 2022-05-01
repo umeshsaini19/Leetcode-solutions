@@ -35,7 +35,7 @@ public:
         if(data.size() == 0) return NULL; 
         stringstream s(data);
         string str; 
-        getline(s, str, ',');
+        getline(s, str, ',');        //yeh root bnane ke liye
         TreeNode *root = new TreeNode(stoi(str));
         queue<TreeNode*> q; 
         q.push(root); 
@@ -44,7 +44,7 @@ public:
             TreeNode *node = q.front(); 
             q.pop(); 
             
-            getline(s, str, ',');
+            getline(s, str, ',');   //yeh left bnane ke liye
             if(str == "#") {
                 node->left = NULL; 
             }
@@ -54,7 +54,7 @@ public:
                 q.push(leftNode); 
             }
             
-            getline(s, str, ',');
+            getline(s, str, ',');         //yeh right banne ke liye 
             if(str == "#") {
                 node->right = NULL; 
             }
