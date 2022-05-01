@@ -11,7 +11,18 @@
  */
 class Solution {
 public:
-   TreeNode* buildBinaryTree(vector<int>& preorder, vector<int>& inorder, int is, int ie, unordered_map<int, int> &ump, int& preIndex) {
+   
+//     TreeNode*solve(vector<int>& preorder, vector<int>& inorder,int lb,int ub,int &preindex,map<int,int>&mp){
+//         if(lb>ub)return NULL;
+//         TreeNode*res=new TreeNode(preorder[preindex++]);
+//         int ind=mp[res->val];
+//        // if(lb==ub) return res;
+//       res->left=solve(inorder,preorder,lb,ind-1,preindex,mp);
+//         res->right=solve(inorder,preorder,ind+1,ub,preindex,mp);
+//       return res;
+        
+//     }
+    TreeNode* buildBinaryTree(vector<int>& preorder, vector<int>& inorder, int is, int ie,map<int, int> &ump, int& preIndex) {
     if(is > ie) return NULL;
     TreeNode *root = new TreeNode(preorder[preIndex++]);
     
@@ -22,13 +33,13 @@ public:
     root->right = buildBinaryTree(preorder, inorder, inIndex+1, ie, ump, preIndex);
     return root;
 }
-
-TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-    int preIndex = 0;
-	unordered_map<int, int> ump;    
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+       int preIndex = 0;
+	map<int, int> ump;    
     for(int itr = 0; itr < inorder.size(); itr++){
         ump[inorder[itr]] = itr;
     }
-    return buildBinaryTree(preorder, inorder, 0, inorder.size()-1, ump, preIndex);
-}
+    return  buildBinaryTree(preorder, inorder, 0, inorder.size()-1, ump, preIndex);
+
+    }
 };
