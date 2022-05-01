@@ -23,7 +23,7 @@ public:
         TreeNode* root = new TreeNode(post[index]);
         index--;
         
-        if(lb==ub) return root;
+       // if(lb==ub) return root;
         
         int mid = m[root->val];
         
