@@ -99,10 +99,9 @@ struct Node
 class Solution{
   public:
     /*You are required to complete this method*/
-    int ans;
+    int ans;//code with yogesh
     void solve(Node*root,int &ma,int h){
         if(!root) return ;
-       // if(ans==0) return ;
         if(root->left==NULL and root->right==NULL){
             if(ma==-1){
                 ma=h;
