@@ -106,13 +106,11 @@ class Solution{
         if(root->left==NULL and root->right==NULL){
             if(ma==-1){
                 ma=h;
-            }else{
-                
-            if( h!=ma)
+            }else if( h!=ma)
         {
            
             ans=0;}
-        }return ;
+        return ;
             }
             solve(root->left,ma,h+1);
             solve(root->right,ma,h+1);
