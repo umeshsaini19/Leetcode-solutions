@@ -14,7 +14,7 @@ public:
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int>inorder;
         TreeNode*curr=root;
-        while(curr!=NULL){
+        while(curr){
             if(curr->left==NULL) {
                 inorder.push_back(curr->val);
                 curr=curr->right;}
