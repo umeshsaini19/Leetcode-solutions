@@ -139,7 +139,7 @@ int kthAncestor(Node *root, int k, int node)
 {
     int ancestor=-1;
     findAncestor(root,node,k,ancestor);
-   // if(root->data==node) return -1;
+   if(root->data==node) return -1;
     
     return ancestor;
 }
