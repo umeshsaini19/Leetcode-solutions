@@ -111,8 +111,25 @@ struct Node
 */
 // your task is to complete this function
 
+// Node*solve (Node *root, int &k, int node,int &ancestor){
+// if(root==NULL) return NULL;
+
+// if(root->data==node||solve(root->left,k,node,ancestor)||solve(root->right,k,node,ancestor)){
+//   if (k > 0) {
+//             k = k - 1;
+//         } else if (k == 0) {
+//             ancestor = root->data;
+//             return NULL;
+//         }
+
+//         return root;
+//     }
+
+//     return NULL;
+// }
+
 Node*findAncestor (Node *root, int targetNodeVal, int &k, int &ancestor){
-   if (!root) {
+  if (!root) {
         return NULL;
     }
 
@@ -121,10 +138,8 @@ Node*findAncestor (Node *root, int targetNodeVal, int &k, int &ancestor){
     if (root->data == targetNodeVal || findAncestor(root->left, targetNodeVal, k, ancestor) || findAncestor(root->right, targetNodeVal, k, ancestor)) {
 
         if (k > 0) {
-            k = k - 1;
-        }
-
-        else if (k == 0) {
+          k = k - 1;
+        } else if (k == 0) {
             ancestor = root->data;
             return NULL;
         }
@@ -139,7 +154,8 @@ int kthAncestor(Node *root, int k, int node)
 {
     int ancestor=-1;
     findAncestor(root,node,k,ancestor);
-   if(root->data==node) return -1;
+  if(root->data==node) return -1;
     
     return ancestor;
 }
+
