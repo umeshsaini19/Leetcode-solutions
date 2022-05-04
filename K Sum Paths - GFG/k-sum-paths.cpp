@@ -108,6 +108,7 @@ class Solution{
       int sum=0;
       for(int i=sizee-1;i>=0;i--){
           sum=sum+ans[i];
+         // cout<<sum<<" ";
           if(sum==k){
           count++;}
       }
