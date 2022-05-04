@@ -112,7 +112,7 @@ class Solution{
           if(sum==k){
           count++;}
       }
-      //ans.pop_back();
+      //ans.pop_back();   // agr ans by reference pass kr rhe hote toh yeh krna pdta vector ek hi hota ab toh copy bngi he uski
   }
     int sumK(Node *root,int k)
     {
