@@ -99,7 +99,7 @@ struct Node
 */
 class Solution{
   public:
-  void solve(Node*root,int k,int &count,vector<int>&ans){
+  void solve(Node*root,int k,int &count,vector<int>ans){
       if(root==NULL) return ;
       ans.push_back(root->data);
       solve(root->left,k,count,ans);
@@ -112,7 +112,7 @@ class Solution{
           if(sum==k){
           count++;}
       }
-      ans.pop_back();
+      //ans.pop_back();
   }
     int sumK(Node *root,int k)
     {
