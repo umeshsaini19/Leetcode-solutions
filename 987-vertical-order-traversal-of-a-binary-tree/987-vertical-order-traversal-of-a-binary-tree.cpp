@@ -76,11 +76,17 @@ public:
         dfs(root, 0, 0);
         vector<vector<int>>ans;
         for(auto p1:nodes){
+            
             vector<int>temp;
-            for(auto p2:p1.second)
-                temp.insert(temp.end(), p2.second.begin(), p2.second.end());//temp.end la mtlb last me lgayiye value p2 vali shuru se end tak 
+            for(auto p2:p1.second){
+              
+            
+                temp.insert(temp.end(), p2.second.begin(), p2.second.end());//temp.end la mtlb last me lgayiye value p2 vali shuru se end tak //kyuki hmare ans me sbse last me valye he jo sbsew pehle chaye hme example dekhke smj a jayega and que mjedar he sexy he jitni mrji bar krlo gand ftegi hi es que me 
+            }
          
-         
+         for(int i=0;i<temp.size();i++){
+             cout<<temp[i]<<" ";
+         }
             ans.push_back(temp);
         }
         return ans;
