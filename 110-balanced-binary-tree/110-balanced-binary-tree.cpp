@@ -12,17 +12,17 @@
 class Solution {
 public:
     int solve(TreeNode* root){
-        if(root==NULL) return 0;
+        if(root==NULL) return 1;
         
         int lh=solve(root->left);
-        if(lh==-1) return -1;
+        if(lh==0) return 0;
         int rh=solve(root->right);
-        if(rh==-1) return -1;
+        if(rh==0) return 0;
         
-        if(abs(lh-rh)>1) return -1;
+        if(abs(lh-rh)>1) return 0;
         return max(lh,rh)+1;
     }
     bool isBalanced(TreeNode* root) {
-        return (solve(root)!=-1);
+        return (solve(root));
     }
 };
