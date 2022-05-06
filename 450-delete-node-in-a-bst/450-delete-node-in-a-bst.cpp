@@ -22,10 +22,11 @@ public:
                 while(temp->left) temp = temp->left;
                 temp->left = left;
             } 
-            else root = root->left;
+            else root = root->left; //yeh else bhi root pe hi hoga tbhi chlega 
         }
         else if(root->val > key){
-            root->left = deleteNode(root->left, key);
+            root->left = deleteNode(root->left, key);  //logic bda sexy he krle bhai
+            
         }
         else{
             root->right = deleteNode(root->right, key);
