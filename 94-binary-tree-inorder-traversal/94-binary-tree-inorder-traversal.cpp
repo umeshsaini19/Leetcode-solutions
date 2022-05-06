@@ -11,10 +11,13 @@
  */
 class Solution {
 public:
+    
+    //vector main fn me ans return krne ke lye without vector ho skta agr edr directly print krana hota 
+    //That vector is not considered to be part of algorithmic space. It just stores the answer. Also, we can run the algorithm without it too. Think of it like this. What if instead of pushing element in vector, we just print that element. Then no space would be required
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int>inorder;
         TreeNode*curr=root;
-        while(curr){
+        while(curr){    
             if(curr->left==NULL) {
                 inorder.push_back(curr->val);
                 curr=curr->right;}
