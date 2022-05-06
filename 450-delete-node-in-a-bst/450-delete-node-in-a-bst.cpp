@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    //yeh sol second vale trike se kiya he jo notes me he usme 
     TreeNode* deleteNode(TreeNode* root, int key) {
           if(!root) return root;
         if(root->val == key){
