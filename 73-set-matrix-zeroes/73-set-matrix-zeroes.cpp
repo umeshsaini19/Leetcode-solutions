@@ -7,7 +7,7 @@ public:
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
       if (matrix[i][j] == 0) {
-        dummy1[i] = 0;
+        dummy1[i] = 0;   // video dekhne ki jrurat ni he striver bhaiya ka link he 3no approach dekhlena 
         dummy2[j] = 0;
       }
     }
