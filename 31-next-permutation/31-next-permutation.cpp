@@ -19,3 +19,5 @@ public:
     }
 };
   
+//interview me yeh inbuilt vala bhi bta skte he
+// next_permutation(nums.begin(),nums.end());
