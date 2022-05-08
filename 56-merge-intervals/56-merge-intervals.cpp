@@ -7,7 +7,7 @@ public:
         int j=0;
         ans.push_back(intervals[0]);
         for(int i=1;i<intervals.size();i++){
-            if(ans[j][1]>=intervals[i][0]){
+            if(ans[j][1]>=intervals[i][0]){   //yeh comparsion dyan rkhne he ans se hogya max vala v and and[j][1] vala bhi
                 ans[j][1]=max(ans[j][1],intervals[i][1]);
             }
             else{
