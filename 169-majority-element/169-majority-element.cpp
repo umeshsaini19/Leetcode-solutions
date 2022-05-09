@@ -1,8 +1,10 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+        //yahan se discussion dekhlena agr in future yad na aye mjedar he
+       // https://leetcode.com/problems/majority-element/discuss/1787865/C%2B%2Bor-Detailed-Explanation-w-FUNNY-STORY-or-Two-Approaches-or-DRY-RUN
          int n = nums.size(); // extracting the size of the array
-        
+        //main bath yeh ki jo element n/2 timesh hoga toh ek bari voh aya dusri bar koi aur toh cancel in the end bchega ek hi element jinda 
         int hero = nums[0]; // Intially assume our majority element of index zero 
         int power = 1; // count of majority element
         
