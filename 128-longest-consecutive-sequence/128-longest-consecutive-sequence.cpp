@@ -11,9 +11,9 @@ public:
      
         for(int i=0;i<n;i++){
              
-        if(!st.count(nums[i]-1)){
-              int c=1;
-            int curr=nums[i];
+        if(st.count(nums[i]-1)==0){   //yeh starting pta krne ke liye agr value ni krti exist toh true return kredega means apna sequence us value se hi shuru hoga
+              int c=1;              //count=1 esleye bcz sbse pehla element count hi horha 1,2 ,3,4 2 ke lie 1 and 3 ke liye 2 and 4                                                      ke liye 3 r 1 kahan count huya
+            int curr=nums[i];                           //yeh start of sequence he ab iske +1 check krte jao
             while(st.count(curr+1)){
                 c+=1;
                 curr+=1;
