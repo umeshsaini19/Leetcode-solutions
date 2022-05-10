@@ -18,13 +18,13 @@ class Solution{
         for(int i=0;i<n;i++){
             sum=sum+A[i];
             if(sum==0)
-            maxi=i+1;                 
+            maxi=i+1;                 //agr sum 0 milgya means usse pehle kahin 0 hoga fir voh value duabara ai he 
             else{
                 
-             if(mp.find(sum)!=mp.end()){
-                 maxi=max(maxi,i-mp[sum]);
+             if(mp.find(sum)!=mp.end()){   //agr voh value dubara agyi he toh mtlb pehle tha kuch aur
+                 maxi=max(maxi,i-mp[sum]);  //hum else me sum. o,1,2, aise derhe he ek hisab se index so that i-0,1,2 aise nikle 
              }
-             else mp[sum]=i;
+             else mp[sum]=i;   //  sum ke sath 0,1,2 ,3,4 aise dehre he 
              
             }  
         }return maxi;
