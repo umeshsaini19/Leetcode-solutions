@@ -2,9 +2,9 @@ class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
           vector<vector<int>>ans;
-        int n=nums.size();
-        if(nums.empty())
-            return ans;
+         int n=nums.size();
+        // // if(nums.empty())
+        //     return ans;
           sort(nums.begin(),nums.end());
         for(int i=0;i<n;i++){
             int first_sum=target-nums[i];
