@@ -19,15 +19,16 @@ class Solution{
                      sum=sum+arr[i];
                      if(sum==0)
                      return true;
-                     else  if(mp.find(sum)!=mp.end())
+                     else {
+                         if(mp.find(sum)!=mp.end())
                      return true;
                      else {
                          mp[sum]=i;
                      
-}
+}}
                  }return false;
     }
-};
+};//vasse 
 
 // { Driver Code Starts.
 // Driver code
