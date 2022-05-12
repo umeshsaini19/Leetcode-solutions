@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         ListNode*slow=head;ListNode*fast=head;
-        while(fast!=nullptr &&  fast->next!=nullptr){
+        while(fast!=nullptr &&  fast->next!=nullptr){    //fast!=null vala even ke case me kam ata jab fast vala liinked list khtm krdena and dusra odd me 
             slow=slow->next;
             fast=fast->next->next;
         }return slow;
