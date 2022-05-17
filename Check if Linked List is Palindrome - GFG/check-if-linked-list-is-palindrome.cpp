@@ -49,7 +49,7 @@ class Solution{
             if(head==NULL && head->next==NULL) return true;
             Node*fast=head;
             Node*slow=head;
-            while(fast->next!=NULL && fast->next->next!=NULL){
+            while(fast->next!=NULL && fast->next->next!=NULL){  //yeh line khas yad rkhni he 
                 slow=slow->next;
                 fast=fast->next->next;
             }
@@ -62,7 +62,7 @@ class Solution{
       }
       return true;
         
-       
+       //logic y=vahi he middle lement find krlo using slow and fast pointer and uske badh ka reverse krke head pointer and slow ko compare krvalo 
       
       
 }
