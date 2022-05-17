@@ -12,7 +12,7 @@ public:
        ListNode*a=headA;
          ListNode*b=headB;
         while(a!=b){
-            if(a==NULL) a=headB;
+            if(a==NULL) a=headB;     //manlo a ki length 5 he and b ki 6 toh hum ako bhi 11 chaleyenge and b ko bhi 11 pehle a apne //5 chal liya jaise hi null pe puncha uske b ke 6 aur chalado same b bhi dono side chal dega and ek round ke badh dono sath e chlne //lgenge 
             else {
                 a=a->next;
             }
