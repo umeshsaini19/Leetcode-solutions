@@ -18,9 +18,9 @@ public:
         int count=0;
         while(curr->next!=NULL) //for count of total nodes on ll
         {
-           
+              count++;
             curr=curr->next;
-             count++;
+          
         }
         while(count>=k){
             curr=prev->next;
