@@ -133,7 +133,7 @@ struct Node{
 Node *flatten(Node *root)
 {
     if(root==NULL || root->next==NULL) return root;
-    root->next=flatten(root->next);
+    root->next=flatten(root->next);  //yeh agli root pe jaane ke liye he 
     root= merge(root,root->next);
     return root;
 }
