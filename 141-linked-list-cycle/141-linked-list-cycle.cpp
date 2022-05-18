@@ -8,6 +8,9 @@
  */
 class Solution {
 public:
+    
+//     yeh neche vali photo dekhna mja a jayega
+//     https://leetcode.com/problems/linked-list-cycle-ii/discuss/1248379/C%2B%2B-Solution-with-pictoral-explanation
     bool hasCycle(ListNode *head) {
         if(head==NULL) return false;
         ListNode *fast=head;
