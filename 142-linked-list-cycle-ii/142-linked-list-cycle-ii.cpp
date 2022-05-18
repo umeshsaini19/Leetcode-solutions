@@ -15,7 +15,7 @@ public:
             fast=fast->next->next;
                 if(fast==slow) break;
         }
-        if(fast==NULL || fast->next==NULL) return NULL;
+       if(fast==NULL || fast->next==NULL) return NULL;  //yeh condition esleye he ki node hi ek he upr fast slow vali condito tph chli ni ab yeh bhi glti na chal jaye 
         slow=head;
         while(slow!=fast){
             slow=slow->next;
