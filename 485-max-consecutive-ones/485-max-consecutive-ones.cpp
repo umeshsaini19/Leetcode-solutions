@@ -6,16 +6,18 @@ public:
         for(int i=0;i<nums.size();i++){
            if(nums[i]==1){
                count++;
-           if(maxi<count){
-               maxi=count;
-           }}
+           //     count++;
+           // if(maxi<count){          //ek toh yeh sol ki one jaise jaise ate jaye count btade jao and maxi dekhte jao 
+           //     maxi=count;
+           // }}
+           }
                else {
-                
+                maxi=max(count,maxi);
             
                   count=0;
                    }
            }
-        return maxi;
+        return max(count,maxi);
     }
 };
 // int maximum = 0,greed = 0;
