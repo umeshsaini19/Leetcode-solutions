@@ -1,5 +1,5 @@
 class Solution {
-public:
+public:  //agr sirf comment vala part hta denge toh second method
     int findMaxConsecutiveOnes(vector<int>& nums) {
         int count=0;
         int maxi=0;
@@ -12,12 +12,12 @@ public:
            // }}
            }
                else {
-                maxi=max(count,maxi);
+                maxi=max(count,maxi);  //yeh toh ek bari compare krne ke liye
             
                   count=0;
                    }
            }
-        return max(count,maxi);
+        return max(count,maxi);     //yahan pe dubara esleye bcz manlo 0 aye hi ek bari badh me aye hi na fir else me toh jayenge ni toh previous max se compare krna he na 
     }
 };
 // int maximum = 0,greed = 0;
