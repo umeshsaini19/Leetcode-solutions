@@ -25,7 +25,7 @@ public:
             l1=l1->next;}
             if(l2!=NULL){ sum+=l2->val;
             l2=l2->next;}
-            sum+=carry;
+            sum+=carry;            //11/10 =1 9/10 =0;
             carry=sum/10;                     //carry divide krne se nikalta and value % krne se like 7%10 toh 7 rhega pr 11%10 1 ayega jo hme chaiye 
               ListNode* newn=new  ListNode(sum%10);
             temp->next=newn;          //temp ke temp pe hi new node attach krni he 
