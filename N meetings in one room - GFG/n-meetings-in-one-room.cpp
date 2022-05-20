@@ -12,12 +12,14 @@ class Solution
     {
         vector<pair<int,int>>v;
         int starting_point,ending_point;
-        int counting=1;
+        int counting=1;  //kyuki ek meeting toh atleast hogi hi 
         for(int i=0;i<n;i++){
-            v.push_back(make_pair(end[i],start[i]));//yeh end pehle esleye d
+            v.push_back(make_pair(end[i],start[i]));//yeh end pehle esleye dala he bcz jo age sort krna he voh first pe jo dala he uske hisab se hoga and we want ki sort second ke hisab se ho kyuki we thought ki pehle sort krlo and
+            //dekhlo konci meeting kb meeting horhi kisi ka starting previous ke end se 
+            //pehle horha voh meeting include na hogi 
         }
         sort(v.begin(),v.end());
-    starting_point=v[0].second;
+    starting_point=v[0].second;   
         ending_point=v[0].first;
         for(int i=1;i<n;i++){
             if(v[i].second>ending_point){
