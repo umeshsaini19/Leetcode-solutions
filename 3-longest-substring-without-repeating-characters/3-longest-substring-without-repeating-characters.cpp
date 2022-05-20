@@ -3,14 +3,13 @@ public:
     int lengthOfLongestSubstring(string s) {
         int i=0;
         int j=0;
-int mx=-1;
+               int mx=-1;                                    //jma hi sliding window vale concepts he isme 
         if(s.length()==0)return 0;
         unordered_map<char,int>mp;
         while(j<s.size()){
             mp[s[j]]++;
-            if(mp.size()>j-i+1)
-                j++;
-            else if(mp.size()==j-i+1){
+       
+            if(mp.size()==j-i+1){
                 mx=max(mx,j-i+1);
                 j++;
             }
