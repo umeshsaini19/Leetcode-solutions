@@ -22,7 +22,7 @@ public:
     }
     
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
+       sort(nums.begin(), nums.end());  // 1,2 and 2,1 both are same in case of unique subsets and hum sort krke 1,2,2 ek sath krdenge ki 1,2 ek bari hi aye agr bech me rhega 2,1,2 toh 2,1 bhi ayega and 1,2 bhi ayega and acc to set both are doff and dono print ho jayenge 
         solve(nums);
         return ans; 
     }
