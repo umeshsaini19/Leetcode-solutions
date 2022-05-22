@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //sort krna bhi jruri he startinh me kais ev value a skti he
     vector<vector<int>>ans;
     set<vector<int>>s;
     void solve(vector<int>input,vector<int>output={}){
