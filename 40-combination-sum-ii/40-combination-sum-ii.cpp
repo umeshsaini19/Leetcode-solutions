@@ -6,7 +6,7 @@ public:
             return ;
         }
         for(int i=index;i<candidates.size();i++){
-            if(i>index &&candidates[i]==candidates[i-1])continue;  //i>ind means manlo 1,1,1,2,2 he and jab 4th index pe aye ds me 2 tha toh hum dubara 2 tbhi pick kr payenge agr yeh first time he agr i>ind hogya means pehle v 2 aya same iteration me and ab dubara utha rhe he hum same kyuki manlo 5th index hota uspe bhi 2 hota and hmne 4th vala second iteration me pick kiya he toh 5th vala 3rd iteration me hoga same iteration me ni ho skta that;s why
+            if(i>index &&candidates[i]==candidates[i-1])continue;  //i>ind means manlo 1,1,1,2,2 he and jab 4th index pe aye ds me 2 tha toh hum dubara 2 tbhi pick kr payenge agr yeh first time he agr i>ind hogya means pehle v 2 aya same iteration me and ab dubara utha rhe he hum same kyuki manlo 5th index hota uspe bhi 2 hota and hmne 4th vala second iteration me pick kiya he toh 5th vala 3rd iteration me hoga same iteration me ni ho skta that;s why  we’ve already taken an element with the same value of current element, so simply skip it.
             if(candidates[i]>target) break;
             
             ds.push_back(candidates[i]);
