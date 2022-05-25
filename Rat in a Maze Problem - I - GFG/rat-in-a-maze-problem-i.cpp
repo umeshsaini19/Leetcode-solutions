@@ -13,6 +13,7 @@ class Solution{
     void solve(int i,int j,vector<vector<int>> &m,int n, vector<string>&ans,string move, vector<vector<int>>&vi,int di[],int dj[]){
         if(i==n-1 && j==n-1){ ans.push_back(move); return ;
         }
+        //yeh ek vari voodeo striver bhaiya se firse dkehni pdegi tb jake bath bnegi iski
         
         string dir="DLRU";
         for(int ind=0;ind<4;ind++){
