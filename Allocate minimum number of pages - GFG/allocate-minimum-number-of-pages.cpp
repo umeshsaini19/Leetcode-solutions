@@ -19,9 +19,8 @@ class Solution
         for(int i=0;i<N;i++){
             if(A[i]>barrier) return false;
             if(pages+A[i]>barrier){
-                student+=1;
-                pages=0;
-                pages+=A[i];
+                student+=1;        //jaise hi barrier bda studnt ka count bda diya and pages firse 0 and pages me plus shuru
+              pages=A[i];
             }
             else{
                 pages+=A[i];
