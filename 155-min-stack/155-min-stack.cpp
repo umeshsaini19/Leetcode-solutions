@@ -2,13 +2,13 @@ class MinStack {
      stack < pair < int, int >> st;
 public:
     void push(int x) {
-      int min;
+      int mn;
       if (st.empty()) {
-        min = x;
+        mn = x;
       } else {
-        min = std::min(st.top().second, x);
+        mn = min(st.top().second, x);
       }
-      st.push({x,min});
+      st.push({x,mn});
     }
 
   void pop() {
