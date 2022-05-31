@@ -12,8 +12,8 @@ class Solution
     {
      vector<long long >left,right;
      int pseudo_index1=-1;
-      int width[n];
-     int pseduo_index2=n;
+     int width[n];
+     int pseduo_index2=n; //hmne yeh n esleye lya bcz hum man rhe he ki last index ke badh vala element pe kuch ni he voh zero he toh uska indx daldo isme ki uska size toh 0 hga hum -1 ni le skte minus krte time dikkat a ajyegi
      stack<pair<long long ,long long >>s1,s2;
      for(int i=0;i<n;i++){
          if(s1.size()==0){
@@ -49,7 +49,7 @@ class Solution
      }
      if(s2.size()==0)
      {
-         right.push_back(pseduo_index2);
+         right.push_back(pseduo_index2);  
      }
      else{
          right.push_back(s2.top().second);
@@ -58,6 +58,9 @@ class Solution
     s2.push({arr[i],i});
     }
     reverse(right.begin(),right.end());
+    
+    
+    
     
     for(int i=0;i<left.size();i++){
         width[i]=right[i]-left[i]-1;
