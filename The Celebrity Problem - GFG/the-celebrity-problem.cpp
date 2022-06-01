@@ -14,29 +14,29 @@ class Solution
     int celebrity(vector<vector<int> >& M, int n) 
     {
     
-       int in[n]={0};
-       int out[n]={0};
-       for(int i=0;i<n;i++){
-           for(int j=0;j<n;j++){
-               if(M[i][j]==1){
-                   in[j]++;   //2 array bnaliye and in[j] mtlb kitne j aise he jinko i jante he toh ++ krdo 
-                   //out [i]//kitne i aise he jo bakion ko jante he
-                   out[i]++;
-               }
-           }
-       }
-           for(int i=0;i<n;i++){     //ab in[i] ko sabhi janne chhiaye tbhi n-1 and out[i] means voh kisi ko na jane
-               if(in[i]==n-1 && out[i]==0) return i;
-           }
+    //   int in[n]={0};
+    //   int out[n]={0};
+    //   for(int i=0;i<n;i++){
+    //       for(int j=0;j<n;j++){
+    //           if(M[i][j]==1){
+    //               in[j]++;   //2 array bnaliye and in[j] mtlb kitne j aise he jinko i jante he toh ++ krdo 
+    //               //out [i]//kitne i aise he jo bakion ko jante he
+    //               out[i]++;
+    //           }
+    //       }
+    //   }
+    //       for(int i=0;i<n;i++){     //ab in[i] ko sabhi janne chhiaye tbhi n-1 and out[i] means voh kisi ko na jane
+    //           if(in[i]==n-1 && out[i]==0) return i;
+    //       }
           
-        return -1;
+       // return -1;
         int c=0;
         for(int i=1;i<n;i++){
             if(M[c][i]==1)
             c=i;
         } 
         for(int i=0;i<n;i++){
-            if( (M[c][i]==1 || M[i][c]==0))return -1;
+            if(c!=i and  (M[c][i]==1 || M[i][c]==0))return -1;
         }return c;
     }
 };
