@@ -27,11 +27,15 @@ public:
                 }
                 if (dp[i][j]) {
                     len = g + 1;
+                    
                     start = i;
+                  
+                 
                 }
             }
         }
-            
+              cout<<len;
+              cout<<start;
         return s.substr(start, len);
     }
 };
