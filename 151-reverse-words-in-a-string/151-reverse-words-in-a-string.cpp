@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    // yeh logic he jaise word he =>  my name  toh jaise m aya hmne khali string me concetenate krdia fir y aa m ke sath concetenate krdia jaise hi space ai hmne skip krdi avoh part and my ko stack me daldia then again same name ke sath hi fir jab vapis nikalna he ek iteration ki stack ki and check kiya stack empty he agr ni he mtlb space ke badh top pe dusra element he ek element nikalo space deke dusra nikal do and asatha me pop krte rho
     string reverseWords(string s) {
         if(s.size()==0) return s;
         stack<string>st;
