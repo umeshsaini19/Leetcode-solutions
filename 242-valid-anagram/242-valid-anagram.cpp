@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //cmnt vala part hta do tn second method he 
     bool isAnagram(string s, string t) {
      if(s.size()!=t.size()) return false;
         
