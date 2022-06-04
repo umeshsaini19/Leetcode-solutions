@@ -9,7 +9,9 @@ public:
                 string temp=number.substr(0,i)+number.substr(i+1);
             
               
-      c=max(temp,c);}}
+      c=max(temp,c);
+          }}
+        
         return c;
     }
 };
