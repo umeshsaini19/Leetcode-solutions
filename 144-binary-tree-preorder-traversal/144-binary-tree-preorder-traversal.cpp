@@ -12,18 +12,32 @@
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
-        stack<TreeNode*>st;
-         vector<int>v;
-        if(root==NULL) return v;
-       
-        st.push(root);
-        while(!st.empty()){
-            root=st.top();
-            st.pop();
-            v.push_back(root->val);
-            if(root->right) st.push(root->right);
-            if(root->left) st.push(root->left);
-            
-        }return v;
+       vector<int>inorder;
+      //  TreeNode*curr=root; //aise new Node leke v kr skte he and purani se v kam chal skta he 
+        if(root==NULL) return inorder;
+        //pehle koi value ni dli he pehle sirf connection bna he dusri bari jab mudke vapis arhe he tb connection todenge bhi and sarri values add bhi re==krenge jai mata di lets boys rock
+        while(root){
+            if(root->left==NULL){
+                inorder.push_back(root->val);
+                root=root->right;
+            }
+            else{
+               TreeNode*prev=root->left;
+                while(prev->right && prev->right!=root){
+                    prev=prev->right;
+                }
+                if(prev->right==NULL){
+                    prev->right=root;
+                       inorder.push_back(root->val);
+                    root=root->left;
+                }
+                else{
+                    prev->right=NULL;
+                 
+                    root=root->right;
+                }
+            }
+        }
+        return inorder;
     }
 };
