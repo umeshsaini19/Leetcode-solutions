@@ -11,6 +11,8 @@
  */
 class Solution {
 public:
+    
+    //yeh vala morris pre order vala he same inorder he bs  jaise hi root ko connect kiya tbhi value daldi inorder me root ko jab todte he tb value dalttehe 
     vector<int> preorderTraversal(TreeNode* root) {
        vector<int>inorder;
       //  TreeNode*curr=root; //aise new Node leke v kr skte he and purani se v kam chal skta he 
