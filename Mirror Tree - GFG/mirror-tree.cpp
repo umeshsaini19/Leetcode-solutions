@@ -111,12 +111,20 @@ class Solution {
   public:
     // Function to convert a binary tree into its mirror tree.
     void mirror(Node* node) {
-       if(node!=NULL){
-           swap(node->left,node->right);
-           mirror(node->left);
-           mirror(node->right);
+    //   if(node!=NULL){
+    //       swap(node->left,node->right);
+    //       mirror(node->left);
+    //       mirror(node->right);}
+           
+      if(node == NULL) return;
+   //    if(node->left == NULL && node->right == NULL) return;
+       
+       mirror(node->left);
+       mirror(node->right);
+       
+       swap(node->left,node->right);
        }
-    }
+    
 };
 
 // { Driver Code Starts.
