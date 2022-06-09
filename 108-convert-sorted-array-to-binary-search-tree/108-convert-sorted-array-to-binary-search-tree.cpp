@@ -11,6 +11,8 @@
  */
 class Solution {
 public:
+    
+    //binary search vala logic he ki jo jo element mid se chote he vh sarre left me jayenge and jo jo bde he voh right ame  and jo mid he voh root bn jayega 
     TreeNode*helper(vector<int>&nums,int low,int high){
     while(low<=high){
         int mid=low+(high-low)/2;
