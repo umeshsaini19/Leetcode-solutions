@@ -11,17 +11,18 @@
  */
 class Solution {
 public:
-    TreeNode* solve(vector<int>&pr,int &i,int bound){
+    int i=0;
+    TreeNode* solve(vector<int>&pr,int bound){
         
    //i bhi & me ayega tbhi chlega
         if(i==pr.size()||pr[i]>bound) return NULL;
         TreeNode*root=new TreeNode(pr[i++]);
-        root->left=solve(pr,i,root->val);
-        root->right=solve(pr,i,bound);
+        root->left=solve(pr,root->val);
+        root->right=solve(pr,bound);
         return root;
     }
     TreeNode* bstFromPreorder(vector<int>& preorder) {
-        int i=0;
-        return solve(preorder,i,INT_MAX);
+       // int i=0;
+        return solve(preorder,INT_MAX);
     }
 };
