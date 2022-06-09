@@ -12,6 +12,8 @@
 class Solution {
 public:
     TreeNode* solve(vector<int>&pr,int &i,int bound){
+        
+   //i bhi & me ayega tbhi chlega
         if(i==pr.size()||pr[i]>bound) return NULL;
         TreeNode*root=new TreeNode(pr[i++]);
         root->left=solve(pr,i,root->val);
