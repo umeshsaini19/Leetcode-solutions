@@ -25,7 +25,7 @@ public:
         solve(root);
         int l=0;
         int r=v.size()-1;
-        if(v.size()<=1) return false;
+     //   if(v.size()<=1) return false;
         while(l<r){
            if(v[l]+v[r]==k) return true;
            else if(v[l]+v[r]<k) l++;
