@@ -3,6 +3,7 @@ public:
     int dp[13][10001];
  int help(vector<int>& coins, int amount,int n){
 //yeh vala coin changes recusrive sirf isi platform ke liye nrmal without itni conditions ke striver bhaiya ne jo btaaya voh bhi chal skta he
+     //gfg vala bhi dekh lio dp
     
 if(amount == 0) return 0;
         if(n < 0 || amount < 0) return INT_MAX-1;
