@@ -9,7 +9,9 @@
  * };
  */
 class Solution {
-public:
+public:  
+    
+    //c++ me first commented post he jo sbse bdia he smj a jayega
     ListNode* swapPairs(ListNode* head) {
         if(!head || !head->next) return head;
         
