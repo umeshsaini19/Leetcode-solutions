@@ -18,7 +18,7 @@ class Solution {
 public:
     Node* copyRandomList(Node* head) {
         
-        //striver bhaiya se sikha he jo sikha he 
+        //striver bhaiya se sikha he jo sikha he //neche vale solutions me cmnt bhi he
         
         Node*iter=head;
         Node*front=head;
