@@ -1,5 +1,5 @@
 bool compare(string a,string b){
-    //  cout<<a+b<<" "<<b+a;
+      cout<<a+b<<" "<<b+a<<" ";
     return a+b > b+a;
   
 }
