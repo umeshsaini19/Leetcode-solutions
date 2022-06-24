@@ -1,30 +1,19 @@
 class Solution {
 public:
-     int solve(vector<int>& arr,int ind){
-        int prev=arr[0];
-        int prev2=0;
-        
-        for(int i=1;i<ind;i++){
-            
-            
-        
-       
-        int pick=arr[i];
-        if(i>1){pick=pick+prev2;}
-        
-        int notpick=0+prev;
-            
-            int curri=max(pick,notpick);
-            prev2=prev;
-            prev=curri;//prev esleye return bcz last  me toh prev me jarhi uski value
-        }
-        
-        
-        return prev;
+    
+    //peche se age ki trf bdh rhe he using recursion 
+    int solve(vector<int>& nums,int ind, vector<int>&dp){
+        if(ind==0) return nums[0];
+        if(ind<0) return 0;
+        if(dp[ind]!=-1) return dp[ind];
+        int pick=nums[ind]+solve(nums,ind-2,dp);
+        int not_pick=0+solve(nums,ind-1,dp);
+        return dp[ind]=max(pick,not_pick);
     }
     int rob(vector<int>& nums) {
         int n=nums.size();
-         return solve(nums,n);
+            vector<int>dp(n,-1);
+         return solve(nums,n-1,dp);
 	        
 	    }
     
