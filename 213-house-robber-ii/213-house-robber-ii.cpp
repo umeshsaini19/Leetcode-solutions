@@ -5,7 +5,8 @@ public:
     int solve(vector<int> nums, int start, int n){
         int prev2 = 0, prev = nums[start];
         
-        for(int i=start+1 ; i<n; i++){
+        for(int i=start+1 ; i<n; i++){ //normal me hm i=1 se let pe es bari i=2 se bhi lena pd skt he    //agar adjacent nahi le sakte to hum ek baar first element ko lenge aur last ko hata denge aur ek baar last ko lenge aur first ko hata denge  kyuki first and last ek sah ni le skte dono apas me attacked he
+
             int pick = prev2 + nums[i];
             int notpick = prev;
             
