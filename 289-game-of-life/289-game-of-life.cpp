@@ -57,6 +57,8 @@ public:
 // 			}
 // 		}
 // 	}
+    
+    //jo neche vala soltion he uska yeh faida he ki hmne koi new copy ni bnai pehle values bdli firse vahi dedi voh ani chaiye thi agr 3 he toh 0 krdi and 2 he toh 1 krdi and na mdify kiye pure ko na hi store kiya toh soace complexity bh gau 
    int getLiveNeighbours(vector<vector<int>>& curr, int i, int j, int m, int n) {
 	int liveNeighbours = 0;
 	if(i>0) {
@@ -119,7 +121,7 @@ void gameOfLife(vector<vector<int>>& board) {
 			if(board[i][j] == 2) board[i][j] = 1;
 			else if(board[i][j] == 3) board[i][j] = 0;
 		}
-	}
+	} 
 }
 
 
