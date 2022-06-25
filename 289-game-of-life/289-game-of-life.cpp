@@ -61,7 +61,7 @@ public:
 	int liveNeighbours = 0;
 	if(i>0) {
 		//check the upper neighbour
-		if(curr[i-1][j] == 1 || curr[i-1][j] == 3) liveNeighbours++;
+		if(curr[i-1][j] == 1 || curr[i-1][j] == 3) liveNeighbours++;  // 3 tbhi aya kab voh newly dead hya he means voh pehle alive tha and voh bhi count me hi ayega 
 	}
 	if(i<m-1) {
 		//check the lower neighbour
