@@ -15,6 +15,7 @@ public:
             
             maxi=max(maxi,mp[s[j]]);      //mp[j] yani map me check krte rhe hum values ko 
             if((j-i+1)-maxi>k){  
+              
                 mp[s[i]]--;
                     i++;
             }
