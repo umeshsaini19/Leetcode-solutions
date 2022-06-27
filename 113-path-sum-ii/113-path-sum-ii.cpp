@@ -17,11 +17,12 @@ public:
             return;
         if(!root->left and !root->right and targetSum == root->val)
         {
-            temp.push_back(root->val);
+           temp.push_back(root->val);   //yeh sirf last element ko add krne ke liye he 
             ans.push_back(temp);
             return;
         }
-        temp.push_back(root->val);
+        temp.push_back(root->val);   //yeh condition jab tk last me ni pucnhe chlti hi jarhi 
+        
         getAllPaths(root->left,targetSum-root->val,temp,ans);
         getAllPaths(root->right,targetSum-root->val,temp,ans);
     }
