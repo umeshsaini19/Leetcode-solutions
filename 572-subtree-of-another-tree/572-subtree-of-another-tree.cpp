@@ -23,7 +23,9 @@ bool areEqual(TreeNode* s, TreeNode* t) {
       && areEqual(s->right, t->right);
   }
 
-  bool isSubtree(TreeNode* s, TreeNode* t) {
+  bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+      TreeNode*s=root;
+      TreeNode*t=subRoot;
     return areEqual(s, t)
       || (s->left && isSubtree(s->left, t))
       || (s->right && isSubtree(s->right, t));
