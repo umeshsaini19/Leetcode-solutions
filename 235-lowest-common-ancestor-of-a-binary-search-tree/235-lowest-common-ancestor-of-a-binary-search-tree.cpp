@@ -20,4 +20,4 @@ public:
         }
         else return root;
     }
-};
+};//the point of spliting is my node means ans
