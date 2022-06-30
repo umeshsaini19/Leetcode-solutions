@@ -13,17 +13,16 @@ class Solution {
 public:
     
     //binary search vala logic he ki jo jo element mid se chote he vh sarre left me jayenge and jo jo bde he voh right ame  and jo mid he voh root bn jayega 
-    TreeNode*helper(vector<int>&nums,int low,int high){
-    while(low<=high){
-        int mid=low+(high-low)/2;
-        TreeNode*root=new TreeNode(nums[mid]);
-       
-        root->left=helper(nums,low,mid-1);
-        root->right=helper(nums,mid+1,high);
-         return root;
-    }return nullptr;
-   }
+   TreeNode* rec(vector<int>& nums, int start, int end) {
+        if (start >= end) return NULL;
+        int mid = (start + end) / 2;
+        TreeNode* node = new TreeNode(nums[mid]);
+        node->left = rec(nums, start, mid);
+        node->right = rec(nums, mid+1, end);
+        return node;
+    }
+    
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-      return helper(nums,0,nums.size()-1);
+        return rec(nums, 0, nums.size());
     }
 };
