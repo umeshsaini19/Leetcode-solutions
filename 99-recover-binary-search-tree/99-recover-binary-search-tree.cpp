@@ -10,26 +10,29 @@
  * };
  */
 class Solution {
-public:vector<int>v;
-    int i=0;
-    void inorder(TreeNode*root){
-        if(!root) return ;
-        inorder(root->left);
-        v.push_back(root->val);
-        inorder(root->right);
-    }
-    void check(TreeNode*root){
-           if(!root) return ;
-               check(root->left);
-        if(v[i]!=root->val) swap(v[i],root->val);
- 
-        i++;
-        check(root->right);
-    }
-    void recoverTree(TreeNode* root) {
-        inorder(root);
-        sort(v.begin(),v.end());
-        check(root);
-    }
+    public:
+    
+TreeNode* firstMistake, *secondMistake, *pre;
+	void recoverTree(TreeNode* root) {
+		pre = new TreeNode(INT_MIN);
+		inorder(root);
+		swap(firstMistake->val, secondMistake->val);
+	}
+
+	void inorder(TreeNode* root) {
+		if(root == nullptr) 
+			return;
+
+		inorder(root->left);
+
+		if(firstMistake == nullptr && root->val < pre->val)   //is line ka mtlb he ki yeh first violation he 
+			firstMistake = pre;
+		if(firstMistake != nullptr && root->val < pre->val)  //isa mtkb yeh second he 
+			secondMistake = root; 
+		pre = root;
+        cout<<pre->val;
+
+		inorder(root->right);
+	}
 };
 //main idea vahi he ki tree ka inorder krlia use sort krlia fer dubara se tree traverse kr rhe inorder se and hme pta he jahan pr vecotr ke andr ki value sahi ni hogi us value se swap krna pdega and ans a jayega
