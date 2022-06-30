@@ -21,26 +21,48 @@
  */
 class Solution {
 public:
-    TreeNode* solve(ListNode* head, ListNode* tail = NULL) {
-        if (head == tail) 
-            return NULL;
-        
-        ListNode* fast = head, *slow = head;
-        while (fast != tail && fast->next != tail) {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        
-        TreeNode* root = new TreeNode(slow->val);
-        root->left = solve(head, slow);
-        root->right = solve(slow->next, tail);
-        
-        return root;
+  //  TreeNode* solve(ListNode* head, ListNode* tail = NULL) {
+//       if(head==tail) return NULL;
+//         ListNode*fast=head;
+//         ListNode*slow=head;
+//         while(fast!=tail and fast->next!=tail){// first time ke liye tail=null fir har bari ke liye tail dono side ke liye bdl rha he syane mere 
+//             slow=slow->next;
+//             fast=fast->next->next;
+//         }
+//         TreeNode*dummy=new TreeNode(slow->val);
+//         dummy->left=solve(head,slow);
+//         dummy->right=solve(slow->next,tail);
+//         return dummy;
     
-}
+// }
    TreeNode* sortedListToBST(ListNode* head) {
      
-       return solve(head);
+//        return solve(head);
+       
+       
+       //yeh second jisse smj a jave
+       
+       
+       if(!head)
+            return NULL;
+        if(!head->next)
+        {
+            return new TreeNode(head->val);
+        }
+        ListNode *slow=head,*fast=head->next;
+        while(fast->next&&fast->next->next)
+        {
+            slow=slow->next;
+            fast=fast->next->next;
+            
+        }
+        ListNode *mid=slow->next;
+        slow->next=NULL;
+        
+        TreeNode *root=new TreeNode(mid->val);
+        root->left=sortedListToBST(head);
+        root->right=sortedListToBST(mid->next);
+        return root;
          
     }
 };
