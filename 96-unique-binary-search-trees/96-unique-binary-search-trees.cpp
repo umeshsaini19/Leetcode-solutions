@@ -7,7 +7,7 @@ public://yeh codeix se sikha he
         int res{};
         
         for(int i{1}; i<=n; ++i)
-            res += solve(i-1, dp)*solve(n-i, dp);
+            res += solve(i-1, dp)*solve(n-i, dp); //yeh suing catalon no he ki har rk ko root bnne ka mauka dedo uske left vale ka leke ao i-1 krke 
         
         return dp[n] = res;
     }
