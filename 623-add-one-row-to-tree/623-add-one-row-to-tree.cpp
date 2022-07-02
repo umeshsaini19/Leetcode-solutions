@@ -13,7 +13,7 @@ class Solution {
 public:
     
     void solve(TreeNode* root, int val, int depth){
-        if(depth<1 || root==NULL) return ;
+        if( root==NULL) return ;
         
         if(depth==1){
             TreeNode*ans=root;TreeNode*leftt=root->left;TreeNode*ryt=root->right;
