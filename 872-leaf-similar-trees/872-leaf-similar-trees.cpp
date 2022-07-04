@@ -11,36 +11,34 @@
  */
 class Solution {
 public:
-    void dfs(TreeNode*root,vector<int>&v){
-        if(root==NULL) return ;
-       if (!(root->left || root->right)) {
-            v.push_back(root->val);}
-        dfs(root->left,v);
-        dfs(root->right,v);
+    // void dfs(TreeNode*root,vector<int>&v){
+    //     if(root==NULL) return ;
+    //    if (root->left==NULL || root->right==NULL) {
+    //         v.push_back(root->val);}
+    //     dfs(root->left,v);
+    //     dfs(root->right,v);
+    // }
+    // bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+    //    vector<int>v1{};
+    //     vector<int>v2{};
+    //     dfs(root1,v1);
+    //     dfs(root2,v2);
+    //     return v1==v2;
+    // }
+
+
+ void leaf(TreeNode* root,vector<int>& v){
+        if(root == NULL)
+            return;
+        if(root->left == NULL && root->right == NULL)
+            v.push_back(root->val);
+        leaf(root->left,v);
+        leaf(root->right,v);
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-       vector<int>v1{};
-        vector<int>v2{};
-        dfs(root1,v1);
-        dfs(root2,v2);
-        return v1==v2;
+        vector<int> v,m;
+        leaf(root1,v);
+        leaf(root2,m);
+        return v == m;
     }
-}; 
-// void dfs(TreeNode* root, vector<int>& v) {
-//         if (!root) return;
-//         if (!(root->left || root->right)) {
-//             v.push_back(root->val);
-//         }
-//         dfs(root->left, v);
-//         dfs(root->right, v);
-        
-//     }
-    
-//     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-//         vector<int> v1{};
-//         vector<int> v2{};
-        
-//         dfs(root1, v1);
-//         dfs(root2, v2);
-        
-//         return v1 == v2;
+};
