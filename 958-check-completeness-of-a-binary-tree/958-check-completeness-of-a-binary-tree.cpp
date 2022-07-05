@@ -15,29 +15,25 @@ public:
     //pop krte timr pta lgega ki hm sahi he ya nahi agr pop krte time null pop hogya toh hum glt he yani kisi level pe dikkat he
  
   bool isCompleteTree(TreeNode* root) {
-        if(!root) return true;
-        bool flag=true;
-        queue<TreeNode*>q;
+        queue<TreeNode*> q;
         q.push(root);
-        while(!q.empty())
-        {
-            TreeNode*curr= q.front();
+        
+        while (!q.empty()) {
+            TreeNode* t = q.front();
             q.pop();
-            if(curr==NULL)
-            {
-                flag=false;
-            }
-            else
-            {
-                if(flag==false)
-                {
-                    return false;
+            
+            if (t == NULL) {
+                while (!q.empty()) {
+                    if (q.front() != NULL)
+                        return false;
+                    q.pop();
                 }
-                q.push(curr->left);
-                q.push(curr->right);
+                return true;
+            } else {
+                q.push(t->left);
+                q.push(t->right);
             }
         }
-        return true;
-    }
+      return true;}
 };
  
