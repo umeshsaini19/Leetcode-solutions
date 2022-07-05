@@ -21,7 +21,7 @@ public:
         q.push(root);
         while(!q.empty())
         {
-            auto curr= q.front();
+            TreeNode*curr= q.front();
             q.pop();
             if(curr==NULL)
             {
