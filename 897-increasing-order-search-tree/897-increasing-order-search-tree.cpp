@@ -11,26 +11,37 @@
  */
 class Solution {
 public:
-    void inOrder(TreeNode* root) {
+    void inOrder(TreeNode* root,TreeNode*&curr) {
         if (!root)
             return;
-        inOrder(root->left);
-        nodes.push_back(root->val);
-        inOrder(root->right);
+        inOrder(root->left,curr);
+        curr->right=new TreeNode(root->val);
+        curr=curr->right;
+        inOrder(root->right,curr);
         
     }
     
     TreeNode* increasingBST(TreeNode* root) {
-        TreeNode* new_head = new TreeNode();
-        TreeNode* curr = new_head;
-        inOrder(root);
-        for (auto a : nodes) {
-            curr->right = new TreeNode(a);
-            curr = curr->right;
-        }
+        TreeNode* new_head;
+        TreeNode* curr =new TreeNode();
+        new_head=curr;
+        inOrder(root,curr);
         return new_head->right;
     }
     
-private:
-    vector<int> nodes;
-};
+
+}; 
+// void inorder(TreeNode*& ans, TreeNode* root) {
+//         if (!root) return;
+//         inorder(ans, root->left);
+//         ans->right = new TreeNode(root->val);
+//         ans = ans->right;
+//         inorder(ans, root->right);
+//     }
+//     TreeNode* increasingBST(TreeNode* root) {
+//         TreeNode* temp;
+//         TreeNode* ans = new TreeNode();
+//         temp = ans;
+//         inorder(ans, root);
+//         return temp->right;
+//     }
