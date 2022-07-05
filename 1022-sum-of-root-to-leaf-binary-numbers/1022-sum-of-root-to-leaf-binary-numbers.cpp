@@ -11,6 +11,8 @@
  */
 class Solution {
 public:
+    
+    //pehla hi discuss me bda mst smjaya he
     int solve(TreeNode*root,int sum){
     if(root==NULL) return NULL;
     sum=2*sum+root->val;
