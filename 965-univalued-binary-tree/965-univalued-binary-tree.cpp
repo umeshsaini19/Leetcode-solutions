@@ -23,3 +23,11 @@ bool inorder(int rd,TreeNode* root){
        
     }
 };
+
+//   bool isUnivalTree(TreeNode* root) {
+//         return f(root,root->val);
+//     }
+//     bool f(TreeNode* root,int val){
+//         if(root==NULL)return true;
+//         return (f(root->left,val) & f(root->right,val)  & (root->val==val));
+//     }
