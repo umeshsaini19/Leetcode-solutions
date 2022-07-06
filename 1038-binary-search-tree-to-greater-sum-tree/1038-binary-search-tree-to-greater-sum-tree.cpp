@@ -16,8 +16,9 @@ public:
     void solve(TreeNode*root,int &till_sum){
         if(root==NULL) return ;
         solve(root->right,till_sum);
-        root->val+=till_sum;
-        till_sum=root->val;
+        till_sum+=root->val;
+       root->val=till_sum;
+       // till_sum=root->val;
     
         solve(root->left,till_sum);
     }
