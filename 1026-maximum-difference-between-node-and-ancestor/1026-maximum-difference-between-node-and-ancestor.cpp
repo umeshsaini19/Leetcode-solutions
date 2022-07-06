@@ -17,7 +17,11 @@ public:
         if(root==NULL) return (maxi-mini);
         
          mini=min(mini,root->val);
+        cout<<mini<<" ";
+        
+        
          maxi=max(maxi,root->val);
+        cout<<maxi<<" ";
         return max(maxAncestorDiff(root->left,mini,maxi),maxAncestorDiff(root->right,mini,maxi));
     }
 };
