@@ -19,7 +19,7 @@ public:
     Node* copyRandomList(Node* head) {
         
         //striver bhaiya se sikha he jo sikha he //neche vale solutions me cmnt bhi he
-        
+           //yeh toh he sirf new linked list create krni and purani vali ke har element ke age ek ek uski copy hi lgani
         Node*iter=head;
         Node*front=head;
         while(iter!=NULL){
@@ -37,12 +37,12 @@ public:
         while(iter!=NULL){
             if(iter->random!=NULL){
                 iter->next->random=iter->random->next;
-                
+                //yeh he fir random pointer join krvana 
             }
             iter=iter->next->next;
         }
         
-        iter=head;
+        iter=head; //yeh he ki jo purani he usse purani me dubaa leke ana uske link todne new ke sath
         front=head;
         Node*dummy=new Node(0);
         Node*face=dummy;
