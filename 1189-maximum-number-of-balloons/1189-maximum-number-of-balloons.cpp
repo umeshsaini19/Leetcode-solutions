@@ -31,3 +31,9 @@ public:
   //           }
   //       }
   //       return min({b, a, l/2, o/2, n});
+
+
+
+//  int freq[26] = {0}; 
+//         for (auto& ch : text) ++freq[ch - 'a']; 
+//         return min({freq[0], freq[1], freq[11]/2, freq[13], freq[14]/2}); 
