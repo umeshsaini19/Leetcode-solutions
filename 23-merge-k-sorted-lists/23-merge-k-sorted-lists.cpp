@@ -18,7 +18,7 @@ public:
             lists[i]=lists[i]->next;
         }
         }
-        sort(temp.begin(),temp.end());
+        sort(temp.begin(),temp.end());  //complexity NKlogNK bcz n*k is the size of vector  //space o(nk)
         ListNode* ans=new ListNode(0);
         ListNode* move=ans;
         for(int i=0;i<temp.size();i++){
