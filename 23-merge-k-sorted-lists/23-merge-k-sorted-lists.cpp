@@ -9,39 +9,55 @@
  * };
  */
 class Solution {
-public:
+public://q.iske just pechle vala submission dekhke ana and dusri bth maine k sorted array and k sorted linked list me apparoach same c lgai he toh sorted array vala dekhlio agr smj na aye vasse a jayega 
+   #define pqi pair<int,ListNode*> 
+    
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        vector<int>temp;
-        for(int i=0;i<lists.size();i++){
-            while(lists[i]!=NULL){
-            temp.push_back(lists[i]->val);
-            lists[i]=lists[i]->next;
+        priority_queue<pqi,vector<pqi>,greater<pqi>>pq;
+        for(auto it: lists){
+            if(it)
+            pq.push({it->val,it});
         }
+        ListNode*head=new ListNode();
+        ListNode*temp=head;
+        while(!pq.empty()){
+            auto it=pq.top().second;
+            pq.pop();
+            temp->next=it;
+            temp=temp->next;
+            if(it->next)
+                pq.push({it->next->val,it->next});
         }
-        sort(temp.begin(),temp.end());  //complexity NKlogNK bcz n*k is the size of vector  //space o(nk)
-        ListNode* ans=new ListNode(0);
-        ListNode* move=ans;
-        for(int i=0;i<temp.size();i++){
-            ans->next=new ListNode(temp[i]);
-            ans=ans->next;
-        }
-        return move->next;
+        temp->next=NULL;
+        return head->next;
     }
 };
-// };     vector<int>temp;
-//         for(int i=0; i<lists.size(); i++){
-//            while(lists[i] != NULL){
-//                temp.push_back(lists[i]->val);
-//                lists[i]=lists[i]->next;
-//            }
-//         }
+
+
+
+// #define pii pair<int,ListNode*> 
+// class Solution {
+// public:
+//     ListNode* mergeKLists(vector<ListNode*>& lists) {
+//         priority_queue<pii,vector<pii>,greater<pii>> pq;
         
-//         sort(temp.begin(), temp.end());
-//         ListNode* ans=new ListNode(0);
-//         ListNode* res=ans;
-//         for(int i=0; i<temp.size(); i++){
-//             ans->next=new ListNode(temp[i]);
-//             ans=ans->next;
-//         }
+//         ListNode* head = new ListNode();
+//         ListNode* curr = head;
         
-//         return res->next;
+//         for(auto it : lists) 
+// 			if(it)  pq.push({it->val,it});
+        
+//         while(!pq.empty()){
+//             auto it = pq.top().second;
+//             pq.pop();
+            
+//             curr->next = it;
+//             curr = curr->next;
+            
+//             if(it->next) pq.push({it->next->val,it->next});
+//         }
+            
+//         curr->next = NULL;
+        
+//         return head->next;
+//     }
