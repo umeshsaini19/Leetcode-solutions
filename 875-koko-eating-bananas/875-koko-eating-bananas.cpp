@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //first pinned solution c++ da for refence 
 //     bool solve(vector<int>&piles ,int h,int k){
 //         int hour=0;
 //         for(int it:piles){
