@@ -23,6 +23,8 @@ public:
 //         return low;
 //     }
 // };
+    
+    //aise ques me jahan pe low left slow small jo bhi rkhna he rkhke voh jahan rukha voh apna ans
         
         
         
