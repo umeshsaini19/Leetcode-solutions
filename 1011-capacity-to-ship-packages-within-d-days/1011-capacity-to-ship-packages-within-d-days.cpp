@@ -1,5 +1,5 @@
 class Solution {
-public:
+public://book allocation problem krke a ho jayega aram se
     
     bool isPossible(int barrier, vector<int>&A, int N, int M)
     {
