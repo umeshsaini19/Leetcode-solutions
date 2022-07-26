@@ -1,7 +1,7 @@
 class Solution {
-public://yeh codeix se sikha he
+public://yeh codeix se sikha he also from sumit sir
  
-    int solve(int n, vector<int>&dp){
+    int solve(int n, vector<int>&dp){            
         if(n <= 1) return 1;
         if(dp[n] != -1) return dp[n];
         
