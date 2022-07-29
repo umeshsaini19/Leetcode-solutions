@@ -24,7 +24,7 @@ public:
             
             if (t == NULL) {
                 while (!q.empty()) {
-                    if (q.front() != NULL)
+                    if (q.front() != NULL)  //ki jaise 4 5 6 he and manlo 5 na hota direct 6 hota toh false ana chaiye ek null ke badh koi aur value ni ani chaiye and agr agyi toh false
                         return false;
                     q.pop();
                 }
