@@ -34,7 +34,7 @@ public:
         //bcz traversal time o(1) hota he unordered a 
         for(auto it:to_delete) st.insert(it);
         solve(root);
-        if(root) res.push_back(root);
+        if(root) res.push_back(root);  //agr root dlt na hoya tn va kyuki postorder vich root end vich use vich anda
         
         return res;
     }
