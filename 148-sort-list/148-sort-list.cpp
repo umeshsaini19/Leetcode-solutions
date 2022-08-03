@@ -10,6 +10,7 @@
  */
 class Solution {
 public:
+    // o(nlogn)
     
     // 1.Babbar bhaiya se hlka se smja 
     // 2. Sbse pehle merge sort smj le like linked list 2 me divide hui fer age 2 me aise recursion se horah he last me bcha he single element and us element ko usko mergelist ke attach krdia dubara 
