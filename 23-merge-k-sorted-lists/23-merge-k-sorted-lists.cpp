@@ -10,6 +10,8 @@
  */
 class Solution {
 public://q.iske just pechle vala submission dekhke ana and dusri bth maine k sorted array and k sorted linked list me apparoach same c lgai he toh sorted array vala dekhlio agr smj na aye vasse a jayega 
+    
+    //like first example me 3 list he 3no me se pehla pehla element jayega heap ke andr and uska it bhi jo sbse chota voh sbse upr ake bhr a jayega and agr next exist krta higa toh usko daldo kyuki sabhi sorted he to min hi sbse upr ayega 
    #define pqi pair<int,ListNode*> 
     
     ListNode* mergeKLists(vector<ListNode*>& lists) {
