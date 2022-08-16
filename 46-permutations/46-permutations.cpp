@@ -1,18 +1,34 @@
 class Solution {
 public:
-    void solve(int ind,  vector<vector<int>>&ans,vector<int>& nums){
-        if(ind==nums.size()){
-            ans.push_back(nums);
-            return ;}
-        for(int i=ind;i<nums.size();i++)
+    vector<vector<int>> res;
+    vector<vector<int>> permute(vector<int> &nums) {
+        
+        vector<int> path;
+        vector<bool> visited(nums.size() , false);
+        dfs(nums , path , visited);
+        
+        return res;
+    }
+    void dfs(vector<int> &nums , vector<int> &path , vector<bool> &visited)
+    {
+        if(path.size() == nums.size())
         {
-            swap(nums[ind],nums[i]);
-            solve(ind+1,ans,nums);
-            swap(nums[ind],nums[i]);
-        }    }
-    vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>>ans;
-        solve(0,ans,nums);
-        return ans;
+            res.push_back(path);
+            return;
+        }
+        
+        for(int i = 0 ; i < nums.size() ; ++i)
+        {
+            if(visited[i] == false)
+            {
+                visited[i] = true;
+                path.push_back(nums[i]);
+                
+                dfs(nums , path , visited);
+                
+                path.pop_back();   // backtrack
+                visited[i] = false;// backtrack
+            }
+        }
     }
 };
