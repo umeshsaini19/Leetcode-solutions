@@ -1,7 +1,8 @@
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-      
+      // Time complexity : O(N*(2^N))
+// Space complexity : O(N*(2^N))
         vector<vector<int>>ans;
      ans.push_back({});
      for(int num:nums){
