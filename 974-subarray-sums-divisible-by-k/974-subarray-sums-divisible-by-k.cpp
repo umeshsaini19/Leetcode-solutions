@@ -19,3 +19,5 @@ public:
         return count;
     }
 };
+
+//jaise subarray sum equals to k he same vasse he usme sum dundte he isme remainder dund rhe he agr koi remainder pehle agaya he tph uski freq add krlo ans me and fer update krdo mp me new frequency jo ai and jo if(rem<0 ) he yeh remainder ki property he ki agr remainder less then zero aye toh jise module kiya uske sath add krdo
