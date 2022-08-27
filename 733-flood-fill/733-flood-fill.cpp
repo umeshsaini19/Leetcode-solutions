@@ -1,18 +1,36 @@
 class Solution {
 public:
-    void dfs(vector<vector<int>>& image,int val,int i, int j, int newcolor){
-        if(i<0 || i>=image.size()||j<0 ||j>image[0].size()-1|| image[i][j]==newcolor || image[i][j]!=val)
-            return ;
-        
-        image[i][j]=newcolor;
-        dfs(image,val,i-1,j,newcolor);
-          dfs(image,val,i+1,j,newcolor);
-          dfs(image,val,i,j-1,newcolor);
-          dfs(image,val,i,j+1,newcolor);
-    }
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-        int val=image[sr][sc];
-        dfs(image,val,sr,sc,color);
-        return image;
-    }
+vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+	   
+		int m = image.size();
+		int n = image[0].size();
+		
+		queue<pair<int,int>> q;
+		q.push(make_pair(sr,sc));
+		
+		long long int precolor = image[sr][sc];
+		if(precolor == color) return image;
+		
+		while(!q.empty()){
+			
+			int i = q.front().first;
+			int j = q.front().second;
+			image[i][j] = color;
+			q.pop();
+			
+			if(i-1 >= 0 && image[i-1][j] == precolor)
+				q.push(make_pair(i-1,j));
+			
+			if(i+1 < m && image[i+1][j] == precolor)
+				q.push(make_pair(i+1,j));
+			
+			if(j-1 >= 0 && image[i][j-1] == precolor)
+				q.push(make_pair(i,j-1));
+			
+			if(j+1 < n && image[i][j+1] == precolor)
+				q.push(make_pair(i,j+1)); 
+		}
+	   
+		return image;
+	}
 };
