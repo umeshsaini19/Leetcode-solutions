@@ -7,7 +7,7 @@ public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int n=mat.size();
         int m=mat[0].size();
-        vector<vector<int>>ans(n,vector<int>(m,-1));
+        vector<vector<int>>ans(n,vector<int>(m,-1));   //AISE MATRXI CREATE HOTI HE
         queue<pair<int,int>>q;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
@@ -16,8 +16,8 @@ public:
                     ans[i][j]=0;
                 }
             }
-        }
-        int row=n;
+        } 
+        int row=n;  //yeh bs timepass ke liye likha h e kyu kiupr bdlna pdta mereko
         int col=m;
         while(!q.empty()){
             int i=q.front().first;
@@ -47,4 +47,6 @@ public:
         }
         return ans;
     }
+    
+    //code vasse intitv he dekh kr hi smj a jayega yeh and 
 };
