@@ -6,8 +6,7 @@ public:
         if(i<0||i>=n||j<0||j>=m) return ;
         if(grid[i][j]!=1) return ;
         grid[i][j]=0;
-        ct++;
-        dfs(n,m,grid,i-1,j);
+           dfs(n,m,grid,i-1,j);
             dfs(n,m,grid,i,j-1);
             dfs(n,m,grid,i+1,j);
             dfs(n,m,grid,i,j+1);
