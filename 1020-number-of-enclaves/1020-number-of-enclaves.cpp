@@ -27,7 +27,7 @@ public:
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1)
-                    dfs(n,m,grid,i,j);
+                    ct++;
             }
         }
         return ct;
