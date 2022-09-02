@@ -27,3 +27,5 @@ int n,m;
     }
 };
 
+
+//notes+code with alsisha se kiya he dekhna me easy he bs notes dekhlena
