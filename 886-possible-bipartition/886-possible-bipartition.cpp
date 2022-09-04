@@ -1,34 +1,62 @@
-class Solution {
-public:
- bool possibleBipartition(int n, vector<vector<int>>& dislikes) {
-        vector<int> G[n+1];
-        
-        for(auto p: dislikes) {
-            int u = p[0], v = p[1];
-            G[u].push_back(v);
-            G[v].push_back(u);
-        }
-        
-        vector<int> colour(n+1, -1);        
-        for(int i=1;i<=n;i++) {
-            queue<int> q;
-            if(colour[i] == -1) {
-                colour[i] = 0;
-                q.push(i);
-            }
-            while(!q.empty()) {
-                int u = q.front();
-                q.pop();
-                for(int v: G[u]) {
-                    if(colour[v] == -1) {
-                        colour[v] = 1-colour[u];
-                        q.push(v);
-                    } else if(colour[u] == colour[v]) {
-                        return false;
-                    }
+
+ class Solution
+{
+    bool isBipartite(int node, vector<vector<int>> &adj, vector<int> &color)
+    {
+        queue<int> q;
+        q.push(node);
+        color[node] = 1;
+
+        while (!q.empty())
+        {
+            int curr = q.front();
+            q.pop();
+
+            for (int ele : adj[curr])
+            {
+                // Two adjacent vertex have same color
+                if (color[ele] == color[curr])
+                    return false;
+
+                // If it is colorless, then color it with different color as parent node
+                else if (color[ele] == -1)
+                {
+                    color[ele] = 1 - color[curr];
+                    q.push(ele);
                 }
             }
         }
         return true;
-    } 
+    }
+
+public:
+    bool possibleBipartition(int N, vector<vector<int>> &dislikes)
+    {
+        // Adjacency list
+        vector<vector<int>> adj(N + 1);
+
+        // Build a Undirected graph. Undirected Graph Why ?
+        // Because if (a,b) a dislikes b is equivalent to b dislikes a.
+        for (int i = 0; i < dislikes.size(); i++)
+        {
+            adj[dislikes[i][0]].push_back(dislikes[i][1]);
+            adj[dislikes[i][1]].push_back(dislikes[i][0]);
+        }
+
+        // Color(1 & 0 are two color) & Initialize with -1(Colorless)
+        vector<int> color(N + 1, -1);
+
+        for (int i = 1; i <= N; i++)
+        {
+            // If it is colorless, then color it and check if 
+            //two adjacent vertex have same color then return false
+            if (color[i] == -1 && !isBipartite(i, adj, color))
+                return false;
+        }
+        return true;
+    }
 };
+
+// striver bhaiya ki bipartite ki video he and apne notes he is same que ka code codebix se smja he baki jrurat v ni he jada 
+
+// dekh simple bfs lgaya and me khud ko first colour dekhke mere jo jo neighbour he jo muje psnd ni he unko dusra colour derha hu and in the end agr jisko jo jo neighbour psnd ni he sab apni mrji ke acc fit huye toh return true 
