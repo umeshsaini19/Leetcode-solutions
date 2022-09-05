@@ -49,6 +49,8 @@ public:
         
     }
 };
+
+//aur ek baat isse krne se pehle striver ki playlist me video ya apne notes dekhlena dn possible bbipartitaon ka ek que he voh dekhleba
 //me agr adjacent ko diff color kr paya toh bipartite hejaise 1 ko ek toh 2 ko dusra 3 ki fir peh;a ab jo 2 ko he uske rever vala 0 ko aise sabko diff
 
 // ek kam ki baat agr odd no of vertex mil jaye toh voh paka hi bipartite na hoga mere dost
