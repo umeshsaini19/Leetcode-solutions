@@ -35,3 +35,5 @@ public:
    if(v.size()==V) return v; else return {};
     }
 };
+
+//jma hi same he course schdule 1 ke bs last me agr size equal he toh vector return krdo ni toh khali krdo
