@@ -10,7 +10,7 @@ public:
             }
             else if(dfsVisited[u] == true) {
                 curCycle[src] = true; // add to ans
-                return true;
+                return true;   //jo jo cycle vale he unko true kr rha he uyeh
             }
         }
         dfsVisited[src] = false;
