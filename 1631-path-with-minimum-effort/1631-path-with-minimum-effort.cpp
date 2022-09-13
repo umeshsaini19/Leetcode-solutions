@@ -42,4 +42,4 @@ public:
     }
 };
  
-//tech adora channel se kiya and que me hme ek se dusre ke bech ka absolute difference dekhna he jaise 1 3 5 3 5 me 2 ka diff he max pr 1 2 2 2 5 vala lgra bdia pr usme 2 to 5 vala scene 
+//tech adora channel se kiya and que me hme ek se dusre ke bech ka absolute difference dekhna he jaise 1 3 5 3 5 me 2 ka diff he max pr 1 2 2 2 5 vala lgra bdia 
