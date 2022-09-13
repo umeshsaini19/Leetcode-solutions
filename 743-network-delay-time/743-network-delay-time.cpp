@@ -1,50 +1,35 @@
 class Solution {
 public:
-    int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-         vector<int>dis(n+1,INT_MAX);
-         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
-        
-        vector<vector<int>>adj[n+1];
-        
-        for(int j=0;j<times.size();j++)   // Graph creation
-            {
-                int u=times[j][0];
-                int v=times[j][1];
-                int w=times[j][2];
-                adj[u].push_back({v,w});
-          }
-         
-         dis[k]=0;                          // Time from K to K is 0
-         pq.push({0,k});
-        
-         while(!pq.empty())
+ int networkDelayTime(vector<vector<int>>& times, int n, int k) {
+     vector<int> dist(n+1,INT_MAX);
+     dist[k]=0;
+     
+     for(int i=0;i<n-1;i++)
+     {
+         bool flag=false;
+         for(auto node:times)
          {
-              int u=pq.top().second;
-              pq.pop();
-             
-             for(auto vec:adj[u])       // vec is vector containing v and w
-                {
-                    int v=vec[0];
-                    int w=vec[1];
-                 
-                   if(dis[u]+w<dis[v])
-                      {
-                        pq.push({dis[u]+w,v});
-                        dis[v]=w+dis[u];
-                      }
-                }
-          }
-	   
-        int ans=0;
-        for(int i=1;i<=n;i++)
-            {
-              if(dis[i]==INT_MAX) return -1;
-              ans=max(ans,dis[i]);
-          }
-        return ans;
+             int src=node[0];
+             int des=node[1];
+             int time=node[2];
+             if(dist[src]!=INT_MAX&&dist[des]>dist[src]+time)
+             {
+                 dist[des]=dist[src]+time;
+                 flag=true;
+             }
+         }
+        // if(flag==false)
+        //      break;
+     
+         
      }
+     int res=0;
+     for(int i=1;i<=n;i++)
+     {
+         if(dist[i]==INT_MAX)
+             return -1;
+         res=max(res,dist[i]);
+     }
+     return res;
+ }
 };
-
-
-
-//jma hi same to same dijkstra he bs isme last me hmne jo dis array bnaya usko traverse kro and check kro  ki value koi INT_MAX he abhi bhi means ki koi aise node he jo visited ni he toh ans hoga -1 and ni toh sabme se max vala ans
