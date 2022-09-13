@@ -1,33 +1,31 @@
 class Solution {
 public:
  int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-     vector<int> dist(n+1,INT_MAX);
-     dist[k]=0;
-     
-     for(int i=0;i<n-1;i++)
-     {
-         bool flag=false;
-         for(auto node:times)
-         {
-             int src=node[0];
-             int des=node[1];
-             int time=node[2];
-             if(dist[src]!=INT_MAX&&dist[des]>dist[src]+time)
-             {
-                 dist[des]=dist[src]+time;
-                 flag=true;
-             }
-         }
-        if(flag==false)
-             break;
-     } 
-     int res=0;
-     for(int i=1;i<=n;i++)
-     {
-         if(dist[i]==INT_MAX)
-             return -1;
-         res=max(res,dist[i]);
-     }
-     return res;
- }
+        
+        vector<int>dis(n+1,INT_MAX);
+        dis[k]=0;
+        for(int i=1;i<n;i++)
+           {
+             for(int j=0;j<times.size();j++)
+                 {
+                   int u=times[j][0];
+                   int v=times[j][1];
+                   int w=times[j][2];
+                 
+                   if(dis[u]!=INT_MAX && dis[u]+w<dis[v])
+                   {
+                     dis[v]=w+dis[u];
+                   }
+                }
+           }
+		   
+        int ans=0;
+        for(int i=1;i<=n;i++)
+           {
+            if(dis[i]==INT_MAX) return -1;    // If any node is not reachable from k
+            ans=max(ans,dis[i]);
+           }
+        return ans;
+        
+    }
 };
