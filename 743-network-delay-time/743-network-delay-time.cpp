@@ -6,7 +6,7 @@ public:
      
      for(int i=0;i<n-1;i++)
      {
-        
+         bool flag=false;
          for(auto node:times)
          {
              int src=node[0];
@@ -15,11 +15,12 @@ public:
              if(dist[src]!=INT_MAX&&dist[des]>dist[src]+time)
              {
                  dist[des]=dist[src]+time;
-                
+                 flag=true;
              }
          }
-     
-     }
+        if(flag==false)
+             break;
+     } 
      int res=0;
      for(int i=1;i<=n;i++)
      {
@@ -30,5 +31,3 @@ public:
      return res;
  }
 };
-
-//yeh que bellmon and djkistra dono se kiya he and bs ho jayega easy
