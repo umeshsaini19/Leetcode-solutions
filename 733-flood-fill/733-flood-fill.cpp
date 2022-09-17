@@ -9,7 +9,7 @@ vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int co
 		q.push(make_pair(sr,sc));
 		
 		long long int precolor = image[sr][sc];
-		if(precolor == color) return image;
+	   if(precolor == color) return image;
 		
 		while(!q.empty()){
 			
