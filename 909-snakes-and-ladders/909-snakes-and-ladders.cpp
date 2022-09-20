@@ -19,7 +19,9 @@ public:
                 if(nextpos>n*n) break;//last pe punch gya add krte krte tohbreak krde 
                 int r=n-(nextpos-1)/n-1;   //yeh row nikalne ka formyla he 
                     int c=(nextpos-1)%n; //yeh column nikalne ka agr even length he toh  row ka
-                if(r%2==n%2) c=n-c-1; //agr odd length he bcz of zig zag type 
+            	if ((n-1-r) % 2 != 0) {
+						c = n - 1 - c;
+					}   //agr odd length he bcz of zig zag type 
                 if(!visited[r][c]){
                     visited[r][c]=true;
                     if(board[r][c]!=-1) //means ya toh ladder he he ya stairs toh board pe jp value he voh deni  hogi{
