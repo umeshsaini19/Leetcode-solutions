@@ -24,3 +24,5 @@ public:
         return helper(nums, target, nums.size(), dp);
     }
 };
+
+//sirf base condition me thoda changes he rest same he unbounded knapsack ka jo smj aye vahi krna chaiye faltu me dimag mat lgana chaiye
