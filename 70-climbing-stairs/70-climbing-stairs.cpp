@@ -1,17 +1,18 @@
 class Solution {
 public:
-    int mk(int n,vector<int> &memo)
-    {     
-         if(n<0) return 0;
-         if(memo[n]!=-1) return memo[n];
-         if(n==0) return 1;
-         return memo[n]=mk(n-1,memo)+mk(n-2,memo);
-    }
-     
     int climbStairs(int n) {
-        vector<int> memo(n+1,-1);
-        return mk(n,memo);
+        int arr[46]; // array for 1 <= n <= 45
+        arr[1] = 1; // only one way
+        arr[2] = 2; // two ways 1->1 or directly 2
+        
+        
+        // from n = 3 ==> calculate from last two steps
+        for(int i = 3; i <= n; i++){
+            arr[i] = arr[i-1]+arr[i-2];
+        }
+        return arr[n];
+        
     }
 };
 
-//yeh fibomacci hi he and khudse recursion likhke dekj skta he agr smj n aye
+//yeh recursion se s itna alag he ki recursion 1 se shuru hoti yeh 0 se means yahan pe base se check kr rhe ki 2 he toh base se 1 1se 2 and 0 se direcr 2 bhi ja skte he
