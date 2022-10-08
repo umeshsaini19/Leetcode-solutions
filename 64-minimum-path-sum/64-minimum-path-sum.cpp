@@ -1,27 +1,30 @@
 class Solution
 {
-    int rec(int r, int c, int& m, int& n, vector<vector<int>>& grid, vector<vector<int>>& dp)
-    {
-        // Base Cases
-        if(r==m-1 && c==n-1)
-            return grid[r][c];
-        if(r >= m || c >= n)
-            return 1000;  // Random big number
-        if(dp[r][c] != -1)
-            return dp[r][c];
-        
-        int down = grid[r][c] + rec(r+1,c,m,n,grid,dp);
-        int right = grid[r][c] + rec(r,c+1,m,n,grid,dp);
-        
-        
-        return dp[r][c] = min(down,right);
-    }
 public:
     int minPathSum(vector<vector<int>>& grid)
     {
-        int m = grid.size(), n = grid[0].size();
+        int m = grid.size(), n = grid[0].size(), down, right;
         vector<vector<int>> dp(m,vector<int>(n,-1));
-        int ans = rec(0,0,m,n,grid,dp);
-        return ans;
+        
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                down = right = 1000; // Random large number
+                if(i==0 && j==0)
+                    dp[i][j] = grid[0][0];
+                else
+                {
+                    if(i>0){
+                        down = grid[i][j] + dp[i-1][j];
+                         cout<<down<<"d ";}
+                    if(j>0){
+                        right = grid[i][j] + dp[i][j-1];
+                    cout<<right<<"r ";}
+                    dp[i][j] = min(down,right);
+                }
+            }
+        }
+        return dp[m-1][n-1];
     }
 };
