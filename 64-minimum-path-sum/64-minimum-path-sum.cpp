@@ -10,7 +10,7 @@ public:
         {
             for(int j=0;j<n;j++)
             {
-                down = right = 1000; // Random large number
+                down = right = 1000; // Random large number  //yeh esleye he ki koi faltu ka add na ho jaye jaise par krte hi voh vala case failed min me voh ayega hi ni
                 if(i==0 && j==0)
                     dp[i][j] = grid[0][0];
                 else
