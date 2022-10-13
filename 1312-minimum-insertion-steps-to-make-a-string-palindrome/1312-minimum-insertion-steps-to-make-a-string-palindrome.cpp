@@ -32,4 +32,7 @@ int solve(string a,string b,int n,int m){
     return n-lcs;
     }
 
+    
+    // min insertion is total length -lcs 
+    //min deletion is Sre.length()-lps(S);
 };
