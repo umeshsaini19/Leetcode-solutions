@@ -31,8 +31,10 @@ int solve(string a,string b,int n,int m){
     int lcs=solve(str,str1,n,n);
     return n-lcs;
     }
-
     
-    // min insertion is total length -lcs 
-    //min deletion is Sre.length()-lps(S);
+    //aur yeh lps =lcs(s,rever of(s))  toh smj rhe ho na lcs likha he means lps hi he 
+  
+    
+    // min insertion  and deletion is total length -lcs   dono same hi toh honge jitne faltu he ya toh utne hi add krde ya fer utne hi remove krdo 
+    
 };
