@@ -3,7 +3,7 @@ public:
   
      int rec(vector<vector<int>>& matrix,int i, int j,vector<vector<int>>&dp){
         if(j<0 || j>matrix[0].size()-1){
-            return INT_MAX-100;
+          return 1e9;  //aise  value return krdo ki dusra apne ap min hi ho
         }
         if(i>matrix.size()-1){
             return 0;
