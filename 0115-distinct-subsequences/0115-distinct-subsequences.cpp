@@ -1,23 +1,34 @@
 class Solution {
 public:
   
-    int solve(string s, string t,int n,int m,  vector<vector<int>>&dp){
-        if(n==0 and m==0)
-            return 1;
-        if(n==0) return 0;
-        if(m==0) return 1;
-        if(dp[n][m]!=-1) return dp[n][m];
-        if(s[n-1]==t[m-1]) {
-            return dp[n][m]=solve(s,t,n-1,m-1,dp)+solve(s,t,n-1,m,dp);
-        }
-        return dp[n][m]=solve(s,t,n-1,m,dp);
-    }
+  
     int numDistinct(string s, string t) {
-        int n=s.length();
-     
-        int m=t.length();
-           vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
-        return solve(s,t,n,m,dp);
+        int n=s.size();
+        int m=t.size();
+        vector<vector<double>>dp(n+1,vector<double >(m+1,0));
+        
+       
+        int i,j;
+
+        for(i=0;i<=n;i++)
+ dp[i][0]=1;   //jdo m zero a odo j==0 hogya recursion vale de acc te i==0 return 0 vali condition likhn di lod ni a bcz already apan dp 0 hi lai a agr -1 lai hundi fer condtion andi 
+        
+        for(i=1;i<=n;i++)
+        {
+            for(j=1;j<=m;j++)
+            {
+                if(s[i-1]==t[j-1])
+                {
+                    dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
+                    
+                }
+                else
+                    dp[i][j]=dp[i-1][j];
+            }
+            
+        }
+
+        return dp[n][m];
     }
 };
 
