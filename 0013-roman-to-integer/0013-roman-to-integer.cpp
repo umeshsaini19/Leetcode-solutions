@@ -13,7 +13,7 @@ public:
         for(int i=0;i<s.length();i++){
             if(i<s.length()-1 && mp[s[i]]<mp[s[i+1]]){  //jaise IV he toh 5 4 se bda he toh subtract krke add krdo agr VI he toh dono alag alag add krke plus krdo 
                 res+=mp[s[i+1]]-mp[s[i]];
-                i++;
+                i++;  //yeh smj rha he agr IV he toh 5-4 yeh dono ke lliye hogye he so ab i++ lrdo 
             }
             else{
                 res+=mp[s[i]];
