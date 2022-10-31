@@ -5,7 +5,7 @@ public:
        int  l=1, r=x,ans;
       
         while(l<=r){
-            long long mid = l+(r-l)/2;
+            long long  mid = l+(r-l)/2;
             
             
             if(mid* mid ==x) return mid;
@@ -21,3 +21,5 @@ public:
         return ans;
     }
 };
+
+//jaise na 16 he toh hum 1 se shuru krenge 1*1 <=16 ans =1 aise krte krte last executed input hogi 4 and uske bad kuch ni ayeha aise and in the end return jo ans me ayega 
