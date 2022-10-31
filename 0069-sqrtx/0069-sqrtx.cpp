@@ -18,8 +18,18 @@ public:
             
         } 
         
+        
         return ans;
+        
+        //brute force o(n)  vali 
+//         int mySqrt(int x) {
+//       long long i=0;
+//       while(i*i<=x)
+//          i++;
+//          return i-1;
+     
     }
 };
+
 
 //jaise na 16 he toh hum 1 se shuru krenge 1*1 <=16 ans =1 aise krte krte last executed input hogi 4 and uske bad kuch ni ayeha aise and in the end return jo ans me ayega 
