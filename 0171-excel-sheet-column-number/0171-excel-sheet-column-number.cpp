@@ -8,17 +8,6 @@ public:
         return ans;
     }
 };
+//dekh jaise binary to decimal conversion hota he vasse hi he similar trah se jaise 
 
-// class Solution {
-// public:
-//     int titleToNumber(string columnTitle) {
-//         // Initialize the output result...
-//         int output = 0;
-//         // Traverse the whole list through the loop...
-//         for(auto c: columnTitle) {
-//             // Process to get the excel sheet column number...
-//             output = output * 26 + (c - 'A' + 1);    
-//         }
-//         return output;    // Return the output...  
-//     }
-// };
+//  CDA he manlo toh first positiob pe   26^0+ 28-26+1 =3 aise c-'A' +1 esleye ki usko convert krna he na numeric me alphabetic se similar decimal to binary converision with base 26
