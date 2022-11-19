@@ -1,7 +1,7 @@
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-        if(accumulate(gas.begin(),gas.end(),0)<accumulate(cost.begin(),cost.end(),0)){
+        if(accumulate(gas.begin(),gas.end(),0)<accumulate(cost.begin(),cost.end(),0)){  //agr value ka sum kam jada he voh edr hi -1 return hotrha he age ki lod hi ni he
             return -1;  } //hum jo neche likha ki dono ka apas me sum krke pehle check krlo agr aise hi pta chlra baki logic kilod hi ni he
             int n=gas.size();
             int  remaining=0;
