@@ -1,27 +1,24 @@
 class Solution {
 public:
-    vector<int> productExceptSelf(vector<int>& nums) {
+      vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
+        
         vector<int> ans(n);
-        vector<int> left_Product(n);
-        vector<int> right_Product(n);
         
-        left_Product[0] = 1;
-        for(int i = 1; i < nums.size(); i++){
-            left_Product[i] = left_Product[i - 1] * nums[i - 1];
+        ans[n - 1] = 1; // ans array used as right product array
+        
+        for(int i = n - 2; i >= 0; i--){
+            ans[i] = nums[i + 1] * ans[i + 1];
         }
         
-        right_Product[n - 1] = 1;
-        for (int j = n - 2; j >= 0; j--) {
-            right_Product[j] = right_Product[j + 1] * nums[j + 1];
-        }
-        
-        for (int k = 0; k < n; k++) {
-            ans[k]= left_Product[k] * right_Product[k];
+        int leftProd = 1;
+        for(int i = 0; i < n; i++){
+            ans[i] = leftProd * ans[i];
+            leftProd = leftProd * nums[i];
         }
         
         return ans;
     }
 };
 
-//jo particular value he usse left vale multiple krfe and usse roght vale multiply and isse pehle ek brute force v likhi he voh bhi dekhlop and iske baad v he ek aur approcahc 
+//jo isse pehle vali approach he usme right and legt 2 array use ho rhe eh toh hum sirf right vala vector maintain krlete he front se jaise first ka dekh rhe he toh jo right ki value he multiplye with first jo right array me he same for jaise hme second ka krna he toh uske right tak ki value array se uthalop and  left ki value direct multiolye krta aja first ko  multiply hi krna he right ke sath andANS A JAYEGA 
